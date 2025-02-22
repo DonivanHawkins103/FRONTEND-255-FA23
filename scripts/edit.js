@@ -4,7 +4,7 @@ addEventListener("DOMContentLoaded", async function(){
     const urlparam = new URLSearchParams(window.location.search)
     const songID = urlparam.get('id')
 
-    const response = await fetch("http://localhost:3000/api/songs/" + songID)
+    const response = await fetch("https://hammerhead-sequoia-alamosaurus.glitch.me/api/songs/" + songID)
     if(response.ok){
         let song = await response.json()
         document.querySelector("#songId").value = song._id
@@ -31,7 +31,7 @@ document.querySelector("#genre").value.split(",") : []
 };
 
 // Send PUT request with JSON-encoded song to Music API
-const response = await fetch("http://localhost:3000/api/songs/" + songID, {
+const response = await fetch("https://hammerhead-sequoia-alamosaurus.glitch.me/api/songs/" + songID, {
 method: "PUT",
 headers: {
 "Content-Type": "application/json"
