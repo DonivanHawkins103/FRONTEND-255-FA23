@@ -7,7 +7,7 @@ class Auth{
 
     validateAuth(auth){
         if(auth !=1){
-            window.location.replace("/login.html")
+            window.location.replace("/FRONTEND-255-FA23/login.html")
         }
         else{
             document.querySelector("body").style.display = "block"
