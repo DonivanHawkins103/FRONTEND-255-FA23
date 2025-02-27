@@ -19,6 +19,6 @@ class Auth{
         localStorage.removeItem("token")
         localStorage.removeItem("uname")
 
-        window.location.replace("/login.html")
+        window.location.replace("/FRONTEND-255-FA23/login.html")
     }
 }
