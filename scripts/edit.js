@@ -21,28 +21,22 @@ addEventListener("DOMContentLoaded", async function(){
 // Create a song object from the form fields
 const songID = document.querySelector("#songId").value
 const song = {
-_id: document.querySelector("#songId").value,
-title: document.querySelector("#title").value,
-artist: document.querySelector("#artist").value,
-releaseDate: document.querySelector("#released").value,
-popularity: document.querySelector("#popularity").value,
-genre: document.querySelector("#genre").value ? 
-document.querySelector("#genre").value.split(",") : []
+    _id: document.querySelector("#songId").value,
+    title: document.querySelector("#title").value,
+    artist: document.querySelector("#artist").value,
+    releaseDate: document.querySelector("#released").value,
+    popularity: document.querySelector("#popularity").value,
+    genre: document.querySelector("#genre").value ? 
+    document.querySelector("#genre").value.split(",") : []
 };
 
 // Send PUT request with JSON-encoded song to Music API
-const response = await fetch("https://hammerhead-sequoia-alamosaurus.glitch.me/api/songs/" + songID, {
-method: "PUT",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify(song)
-});
+const response = await fetch("https://hammerhead-sequoia-alamosaurus.glitch.me/api/songs/" + songID, {method: "PUT",headers: {"Content-Type": "application/json"},body: JSON.stringify(song)});
 
 if (response.ok) {      
-alert("Updated song.");
-}
+    alert("Updated song.");
+    }
 else {
-document.querySelector("#error").innerHTML = "Cannot update song.";
-}     
+    document.querySelector("#error").innerHTML = "Cannot update song.";
+    }     
 }
